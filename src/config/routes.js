@@ -7,6 +7,7 @@ import Temperatura from '../pages/Temperatura'
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
+import colors from '../colors';
 
 
 const Home = createStackNavigator({
@@ -81,7 +82,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
     {
     animationEnabled: true,
     swipeEnabled: true,
-    barStyle: { color: '#fff' },
+    barStyle: { backgroundColor:colors.primary },
     tabBarOptions: { activeTintColor: 'black', tintColor: 'black',
 },
 },

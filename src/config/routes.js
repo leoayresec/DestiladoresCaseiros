@@ -83,7 +83,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
     animationEnabled: true,
     swipeEnabled: true,
     barStyle: { backgroundColor:colors.primary },
-    tabBarOptions: { activeTintColor: 'black', tintColor: 'black',
+    tabBarOptions: { activeColor: 'black', tintColor: 'black',
 },
 },
 

@@ -7,7 +7,7 @@ import Temperatura from '../pages/Temperatura'
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
-import colors from '../colors';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 
 
 const Home = createStackNavigator({
@@ -23,70 +23,15 @@ const Home = createStackNavigator({
 });
 
 
-const TabNavigator = createMaterialBottomTabNavigator(
+const TabNavigator = createDrawerNavigator(
     {
-        Diluição: {
-            screen: Diluicao,
-            navigationOptions: () => {
-                const TabIcon = ({ tintColor }) => (
-                    <View style={{ width: 26 }}>
-                        <Icon
-                            name="flask"
-                            type="font-awesome"
-                            color={tintColor}
-                        />
-                    </View>
-                );
-                return {
-                    tabBarIcon: TabIcon,
-                };
-            },
-        },
-        Brix: {
-            screen: Brix,
-            navigationOptions: () => {
-                const TabIcon = ({ tintColor }) => (
-                    <View style={{ width: 26 }}>
-                        <Icon
-                            name="grid"
-                            type="entypo"
-                            color={tintColor}
-                        />
-                    </View>
-                );
-                return {
-                    tabBarIcon: TabIcon,
-                };
-            },
-        },
-        Temperatura: {
-            screen: Temperatura,
-            navigationOptions: () => {
-                const TabIcon = ({ tintColor }) => (
-                    <View style={{ width: 26 }}>
-                        <Icon
-                            name='thermometer-full'
-                            type='font-awesome'
-                            color={tintColor}
-                        />
-                    </View>
-                );
-                return {
-                    tabBarIcon: TabIcon,
-                };
-            },
-        },
+        Diluicao:  Diluicao,
 
+        Brix:  Brix,
 
-    },
-    {
-    animationEnabled: true,
-    swipeEnabled: true,
-    barStyle: { backgroundColor:colors.primary },
-    tabBarOptions: { activeColor: 'black', tintColor: 'black',
-},
-},
+        Temperatura:Temperatura,    
 
-)
+    }
+    );
 
 export default createAppContainer(TabNavigator)
